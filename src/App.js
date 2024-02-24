@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Navbar from './camponants/AppBar';
+import Home from './camponants/home/Home';
+import Movies from './camponants/movies/Movies';
+import BookMarks from './camponants/movies/BookMarks';
+import Index from './admin';
+// import Test from './admin/Test';
+import Test from './camponants/movies/Test';
+// import Users from './Users';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='h-screen text-white'>
+      {/* <h1 className='text-2xl font-extrabold float-riogth'>Hello dear</h1> */}
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/Movies' element={<Movies type='movie' />} />
+        <Route path='/Tv' element={<Movies type='tv' />} />
+        <Route path='/Web' element={<Movies type='web' />} />
+        <Route path='/BookMarks' element={<BookMarks />} />
+        <Route path='/admin' element={<Index />} />
+        
+        <Route path='/test' element={<Test />} />
+      </Routes>
+      
+      
     </div>
   );
 }

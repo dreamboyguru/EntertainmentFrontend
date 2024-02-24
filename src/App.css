@@ -1,3 +1,7 @@
+.sm\:scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
 .App {
   text-align: center;
 }

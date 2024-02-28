@@ -19,7 +19,7 @@ function PlayVideo({ isVisiblevideo, onClosevideo, videoName }) {
                     <RxCross2 className='font-bold size-6 hover:text-red-600 hover:size-8 hover:font-extrabold hover:-mt-1 hover:-mr-1' />
                 </button>
                 <video controls className="w-full">
-                    <source src={`http://localhost:3001/images/${videoName}`} type="video/mp4" />
+                    <source src={`http://localhost:3001/video/${videoName}`} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 

@@ -13,11 +13,15 @@ const bookmarksSlice = createSlice({
                     type: video.type, 
                     tittle: video.tittle, 
                     desc: video.desc,
+                    genre: video.genre,
+                    language: video.language,
                     year: video.year,
                     grade: video.grade,
                     actors: video.actors,
                     date: video.date,
                     image: video.image,
+                    trailer: video.trailer,
+                    video: video.video,
                     joinedData: video.joinedData
                 }
             })

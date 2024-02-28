@@ -6,9 +6,7 @@ import Home from './camponants/home/Home';
 import Movies from './camponants/movies/Movies';
 import BookMarks from './camponants/movies/BookMarks';
 import Index from './admin';
-// import Test from './admin/Test';
-import Test from './camponants/movies/Test';
-// import Users from './Users';
+import AddNew from './admin/AddNew';
 
 function App() {
   return (
@@ -23,7 +21,7 @@ function App() {
         <Route path='/BookMarks' element={<BookMarks />} />
         <Route path='/admin' element={<Index />} />
         
-        <Route path='/test' element={<Test />} />
+        <Route path='/AddNew' element={<AddNew />} />
       </Routes>
       
       

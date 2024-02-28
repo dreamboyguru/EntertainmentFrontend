@@ -7,6 +7,7 @@ import PlayPage from './PlayPage';
 import Login from '../Login'
 import Cookies from 'js-cookie';
 
+
 const Movies = ( type ) => {
     const [showModel, setshowModel] = useState(false);
     // const [title, setTitle] = useState();

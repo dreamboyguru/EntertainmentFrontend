@@ -3,6 +3,7 @@ import { RxCross2 } from 'react-icons/rx';
 import PlayVideo from './PlayVideo';
 
 function PlayPage({ isVisible, onClose, passData }) {
+    // console.log(passData)
     const [videoModel, setvideoModel] = useState(false);
     const handleClose = (e) => {
         if (e.target.id === 'wrapperr') return onClose();
@@ -12,7 +13,7 @@ function PlayPage({ isVisible, onClose, passData }) {
 
     return (
         <>
-        <PlayVideo isVisiblevideo={videoModel} onClosevideo={()=>setvideoModel(false)} videoName={passData.image} />
+        <PlayVideo isVisiblevideo={videoModel} onClosevideo={()=>setvideoModel(false)} videoName={passData.video} />
         <div className='fixed inset-0 bg-black text-white bg-opacity-25 backdrop-blur-sm h-full w-full z-30' id='wrapperr' onClick={(e) => handleClose(e)}>
             <div className='flex flex-row max-md:flex-col bg-black mx-48 my-10 rounded-md max-md:mx-2 max-md:mt-5'>
                 <button 
@@ -36,8 +37,8 @@ function PlayPage({ isVisible, onClose, passData }) {
                 <div className=' w-full p-10 max-md:px-2 max-md:-mt-10'>
                     <div className='w-full'>
                         <div>
-                            <h1 className='text-4xl max-md:text-lg max-md:font-semibold'>{passData.tittle} : Powerfull people come from Powerfull Places</h1>
-                            <h1 className='text-4xl max-md:text-lg'>3.9 *****</h1>
+                            <h1 className='text-4xl max-md:text-lg max-md:font-semibold mb-1'>{passData.tittle} </h1>
+                            <h1 className='text-2xl max-md:text-lg'>3.9 *****</h1>
                         </div>
                         <div className='flex flex-row p-2 max-md:p-0.5'>
                             <div className='w-full'>
@@ -46,7 +47,7 @@ function PlayPage({ isVisible, onClose, passData }) {
                             </div>
                             <div className='w-full'>
                                 <div className='max-md:text-sm font-semibold'>Language</div>
-                                <div className='max-md:text-xs'>English</div>
+                                <div className='max-md:text-xs'>{passData.language}</div>
                             </div>
                             <div className='w-full'>
                                 <div className='max-md:text-sm font-semibold'>Year</div>
@@ -59,21 +60,24 @@ function PlayPage({ isVisible, onClose, passData }) {
                         </div>
                         <div className='text-md font-semibold mb-2 max-md:mb-0.5 max-md:text-sm'>Genre</div>
                         <div className='flex flex-wrap'>
-                            <div className='bg-white rounded-md text-black px-2 py-1 max-md:px-1 max-md:py-0.5 text-xs mx-2 font-medium'>Documentary</div>
-                            <div className='bg-white rounded-md text-black px-2 py-1 max-md:px-1 max-md:py-0.5 text-xs mx-2 font-medium'>History</div>
+
+                        {(passData.genre) ? (passData.genre).split(',').map((item) => (
+                                    <div className='bg-white rounded-md text-black px-2 py-1 max-md:px-1 max-md:py-0.5 text-xs mx-2 font-medium'>{item}</div>
+                                )) : null}
+                            
                         </div>
 
                         <div className='mt-4 max-md:mt-1'>
                             <div className='text-md font-semibold mb-2 max-md:mb-0 max-md:text-sm'>Synopsis</div>
-                            <div className='text-sm text-justify max-md:text-xs'>Lorem Ipsum, sometimes referred to as 'lipsum', is the placeholder text used in design when creating content. It helps designers plan out where the content will sit, without needing to wait for the content to be written and approved.</div>
+                            <div className='text-sm text-justify max-md:text-xs'>{passData.desc}</div>
                         </div>
 
                         <div className='mt-4 max-md:mt-1'>
                             <div className='text-md font-semibold mb-2 max-md:mb-0 max-md:text-sm'>Casts</div>
                             <div className='flex flex-wrap'>
-                                {(passData.actors).split(',').map((item) => (
+                                {(passData.actors) ? (passData.actors).split(',').map((item) => (
                                     <div className='border border-gray-300 px-2 max-md:px-1 max-md:font-semibold max-md:pb-0.5 rounded-md m-1 max-md:text-xs '>{item}</div>
-                                ))}                                                                       
+                                )) : null}                                                                       
                             </div>
                         </div>
 

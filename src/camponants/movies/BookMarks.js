@@ -27,7 +27,7 @@ const BookMarks = () => {
 
     const fetchData = async () => {
       try {
-          const response = await axios.get(`http://localhost:3001/bookmark/${userName}`);
+          const response = await axios.get(`https://entertainmentbackend-fu2q.onrender.com/bookmark/${userName}`);
           // console.log(response.data);
           dispatch(getbookmarks(response.data));
       } catch (err) {
@@ -44,7 +44,7 @@ const BookMarks = () => {
     if (!token && !userName) {
         console.log('token is empty...! Please Login First');
     } else {        
-        axios.delete(`http://localhost:3001/bookmark/${value}`)
+        axios.delete(`https://entertainmentbackend-fu2q.onrender.com/bookmark/${value}`)
         .then(response => {
             window.location.reload()
             console.log(response);
@@ -72,7 +72,7 @@ const BookMarks = () => {
                                 return(
                                     <div className='relative m-2 rounded-lg w-[18%] max-md:w-[95%] mb-14 max-h-52' key={index}>
                                         <img
-                                            src={`http://localhost:3001/images/${item.image}`}
+                                            src={`https://entertainmentbackend-fu2q.onrender.com/images/${item.image}`}
                                             alt='prop'
                                             className='w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer'
                                             onClick={() => {

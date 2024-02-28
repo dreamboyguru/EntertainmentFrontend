@@ -9,7 +9,7 @@ function Index() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/admin/video`);
+                const response = await axios.get(`https://entertainmentbackend-fu2q.onrender.com/admin/video`);
                 setCount(response.data);
             } catch (err) {
                 console.log(err);

@@ -31,7 +31,7 @@ const Movies = ( type ) => {
             // console.log('token is empty...! Please Login First');
             setshowModel(true)
         } else {        
-            axios.post('http://localhost:3001/bookmark', { email: userName, video_id: value })
+            axios.post('https://entertainmentbackend-fu2q.onrender.com/bookmark', { email: userName, video_id: value })
             .then(response => {
 
                 console.log('Response from server:', response.data.video_id);
@@ -51,7 +51,7 @@ const Movies = ( type ) => {
         if (!token && !userName) {
             console.log('token is empty...! Please Login First');
         } else {        
-            axios.delete(`http://localhost:3001/bookmark/${value}`)
+            axios.delete(`https://entertainmentbackend-fu2q.onrender.com/bookmark/${value}`)
             .then(response => {
                 window.location.reload()
                 console.log(response);
@@ -66,7 +66,7 @@ const Movies = ( type ) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/videos/${userName}`);
+                const response = await axios.get(`https://entertainmentbackend-fu2q.onrender.com/videos/${userName}`);
                 // console.log(response.data);
                 dispatch(getVideo(response.data));
             } catch (err) {
@@ -95,7 +95,7 @@ const Movies = ( type ) => {
                                 return(
                                     <div className='relative m-2 rounded-lg w-[18%] max-md:w-[95%] mb-14 max-h-52 min-h-52' key={index}>
                                         <img
-                                            src={`http://localhost:3001/images/${item.image}`}
+                                            src={`https://entertainmentbackend-fu2q.onrender.com/images/${item.image}`}
                                             alt='prop'
                                             className='w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer'
                                             onClick={() => {

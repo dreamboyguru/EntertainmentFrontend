@@ -24,7 +24,7 @@ function PlayPage({ isVisible, onClose, passData }) {
                 </button>
                 <div className=' w-[50%] p-10 max-md:p-2 max-md:w-[80%] max-md:ml-[10%]'>
                     <div className='border-2 w-full overflow-hidden max-md:h-60'>
-                        <img src={`http://localhost:3001/images/${passData.image}`} alt="img" className="w-96 h-80 object-cover" />
+                        <img src={`https://entertainmentbackend-fu2q.onrender.com/images/${passData.image}`} alt="img" className="w-96 h-80 object-cover" />
                     </div>
                     <div>
                         <button className='mt-5 w-full p-2 text-black rounded-md bg-white hover:bg-gray-400 max-md:p-0.5 max-md:text-md max-md:mt-1'

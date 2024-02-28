@@ -23,7 +23,7 @@ function Index() {
       const formdata = new FormData();
       formdata.append('trailer', file);
       console.log(formdata);
-      axios.post(`http://localhost:3001/admin/trailer/${id}`, formdata)
+      axios.post(`https://entertainmentbackend-fu2q.onrender.com/admin/trailer/${id}`, formdata)
           .then(res => {console.log(res) 
             window.location.reload()
           })
@@ -34,7 +34,7 @@ function Index() {
       const formdata = new FormData();
       formdata.append('video', file);
       console.log(formdata);
-      axios.post(`http://localhost:3001/admin/video/${id}`, formdata)
+      axios.post(`https://entertainmentbackend-fu2q.onrender.com/admin/video/${id}`, formdata)
           .then(res => {console.log(res) 
             window.location.reload()
           })

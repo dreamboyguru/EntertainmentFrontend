@@ -57,7 +57,7 @@ const Recommended = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/recommend/${userName}`);
+                const response = await axios.get(`https://entertainmentbackend-fu2q.onrender.com/recommend/${userName}`);
                 // console.log(response.data);
                 dispatch(getRecommend(response.data));
             } catch (err) {

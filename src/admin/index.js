@@ -52,7 +52,7 @@ function Index() {
                 {count.map((item, index) => (
                     <div key={index} className='bg-gray-950 h-auto w-[16%] m-1 mb-2 p-2 rounded-md max-sm:w-full'>
                         <div className=' text-white'>
-                          <img src={`http://localhost:3001/images/${item.image}`} className='w-[80%] ml-[10%] min-h-28 max-h-28'/>
+                          <img src={`https://entertainmentbackend-fu2q.onrender.com/images/${item.image}`} className='w-[80%] ml-[10%] min-h-28 max-h-28'/>
                         </div>
                         <div>
                           <div className='text-center text-lg font-mono'>{item.tittle}</div>

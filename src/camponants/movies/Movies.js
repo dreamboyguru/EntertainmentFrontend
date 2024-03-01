@@ -58,7 +58,7 @@ const Movies = ( type ) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/videos/${userName}`);
+                const response = await axios.get(`https://entertainmentbackend-fu2q.onrender.com/videos/${userName}`);
                 // console.log(response.data);
                 dispatch(getVideo(response.data));
             } catch (err) {
